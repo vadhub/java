@@ -1,0 +1,63 @@
+package ru.vad.round;
+
+import java.awt.CardLayout;
+import java.awt.Choice;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Round extends JFrame {
+
+	public void trigeometry(double sin, double cos, double tg, double ctg) {
+		sin = Math.sin(sin);
+		cos = Math.cos(cos);
+		tg = Math.tan(tg);
+		ctg = cos / sin;
+	}
+
+	public void frontend() {
+
+		JTextField text_deg = new JTextField(4);
+		JTextField rad_txt = new JTextField(4);
+		
+		setLayout(new CardLayout());
+		
+		JTextField input = new JTextField(4);
+
+		JLabel deg = new JLabel("Градусы");
+		JLabel rad = new JLabel("Радианы");
+
+		Choice all_trigeometry = new Choice();
+
+		JPanel for_value = new JPanel();
+		JPanel for_round = new JPanel();
+
+		for_value.add(deg);
+		for_value.add(text_deg);		
+		for_value.add(rad);
+		for_value.add(rad_txt);
+		for_value.add(all_trigeometry);
+		
+		for_round.add(input);
+
+		all_trigeometry.add("sin");
+		all_trigeometry.add("cos");
+		all_trigeometry.add("tg");
+		all_trigeometry.add("ctg");
+
+		add(for_value);
+		add(for_round);		
+		
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Round Pi");
+		setLocation(500, 400);
+		pack();
+		
+		
+	};
+
+}
